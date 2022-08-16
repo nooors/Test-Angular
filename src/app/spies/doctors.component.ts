@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { DoctorsService } from './doctors.service';
+import { Component, OnInit } from "@angular/core";
+import { DoctorsService } from "./doctors.service";
 
 @Component({
-  selector: 'app-medicos',
+  selector: "app-medicos",
   template: ` <p>doctors works!</p> `,
   styles: [],
 })
@@ -19,18 +19,24 @@ export class DoctorsComponent implements OnInit {
   }
 
   addDoctor() {
-    const doctor = { nombre: 'Doctor Juan Carlos' };
+    const doctor = { nombre: "Doctor Juan Carlos" };
 
-    this._doctorsService.addDoctor(doctor).subscribe(
-      (doctorDB: any) => this.doctors.push(doctorDB),
-      (err: string) => (this.errorMessage = err)
-    );
+    // this._doctorsService.addDoctor(doctor).subscribe(
+    //   (doctorDB: any) => this.doctors.push(doctorDB),
+    //   (err: string) => (this.errorMessage = err),
+    // );
+    // All this is deprecated in this RxJS version
+
+    this._doctorsService.addDoctor(doctor).subscribe({
+      next: (doctorDB: any) => this.doctors.push(doctorDB),
+      error: (err) => (this.errorMessage = err.message),
+    });
   }
 
-  borrarMedico(id: string) {
-    const confirmar = confirm('Are you sure you want to delete this doctor');
+  deleteDoctor(id: string) {
+    const confirmed = confirm("Are you sure you want to delete this doctor");
 
-    if (confirmar) {
+    if (confirmed) {
       this._doctorsService.deleteDoctor(id);
     }
   }

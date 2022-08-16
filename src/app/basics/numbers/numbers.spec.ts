@@ -1,6 +1,6 @@
 import { increase } from "./numbers";
 
-xdescribe("number tests", () => {
+describe("number tests", () => {
   it("should return 100 if number is > 100", () => {
     const res = increase(300);
     expect(res).toBe(100);

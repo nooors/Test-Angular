@@ -6,7 +6,7 @@ beforeEach(() => {
   player = new Player();
 });
 
-xdescribe("Class tests", () => {
+describe("Class tests", () => {
   it("Should return 80 hp if recieves 20 hurt", () => {
     // const player = new Player();
     const resp = player.heHasBeeHurt(20);

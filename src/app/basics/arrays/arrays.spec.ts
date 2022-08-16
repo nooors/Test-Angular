@@ -1,6 +1,6 @@
 import { obtainRobots } from "./arrays";
 
-xdescribe("Arrays tests", () => {
+describe("Arrays tests", () => {
   it("should returns 3 robots at least", () => {
     const res = obtainRobots();
     expect(Array.isArray(res)).toBeTruthy();
