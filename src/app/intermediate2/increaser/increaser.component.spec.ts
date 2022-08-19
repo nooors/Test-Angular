@@ -4,7 +4,7 @@ import { TestBed, ComponentFixture } from "@angular/core/testing";
 import { FormsModule } from "@angular/forms";
 import { By } from "@angular/platform-browser";
 
-describe("Incremendator Component", () => {
+describe("Increaser Component", () => {
   let component: IncreaserComponent;
   let fixture: ComponentFixture<IncreaserComponent>;
 
