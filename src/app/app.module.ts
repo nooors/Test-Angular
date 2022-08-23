@@ -13,6 +13,7 @@ import { FormsModule } from "@angular/forms";
 import { ROUTES } from "./advanced/routes/app.routes";
 import { NavbarComponent } from "./advanced/navbar/navbar.component";
 import { RouterDoctorComponent } from './advanced/router-doctor/router-doctor.component';
+import { BasicComponent } from './basics/component/basic/basic.component';
 
 // import modules, declare components
 @NgModule({
@@ -24,6 +25,7 @@ import { RouterDoctorComponent } from './advanced/router-doctor/router-doctor.co
     IncreaserComponent,
     NavbarComponent,
     RouterDoctorComponent,
+    BasicComponent,
   ],
   imports: [
     BrowserModule,
